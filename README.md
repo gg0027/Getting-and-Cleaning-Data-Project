@@ -2,6 +2,7 @@
 
 # Load packages for analysis
 library(dplyr)
+
 library(tidyr)
 
 # Download raw data 
@@ -11,11 +12,17 @@ raw <- download.file("http://d396qusza40orc.cloudfront.net/getdata%2Fprojectfile
 unzip('project.zip')
 
 # Read data from test and train data sets into R
+
 subject_test <- read.table("~/RWorkspace/UCI HAR Dataset/test/subject_test.txt", quote="\"")
+
 X_test <- read.table("~/RWorkspace/UCI HAR Dataset/test/X_test.txt", quote="\"")
+
 Y_test <- read.table("~/RWorkspace/UCI HAR Dataset/test/y_test.txt", quote="\"")
+
 subject_train <- read.table("~/RWorkspace/UCI HAR Dataset/train/subject_train.txt", quote="\"")
+
 X_train <- read.table("~/RWorkspace/UCI HAR Dataset/train/X_train.txt", quote="\"")
+
 Y_train <- read.table("~/RWorkspace/UCI HAR Dataset/train/y_train.txt", quote="\"")
 
 #Merge test data set
