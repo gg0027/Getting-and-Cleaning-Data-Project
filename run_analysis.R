@@ -51,9 +51,9 @@ names(totalStd)[4:36]<- filter(features,V1 %in% stdID)[,2]
 
 # create a second, independent tidy data set with the average of each variable for each activity and each subject
 
-averageMean <- totalMean %>% gather(variable,value, -c(activity_labels:subject)) %>% group_by(activity_labels, subject, variable) %>% summarize(mean = mean(value))
+averageMean <- totalMean %>% gather(variable,value, -c(activity:subject)) %>% group_by(activity_labels, subject, variable) %>% summarize(mean = mean(value))
 
-averageStd <- totalStd %>% gather(variable,value, -c(activity_labels:subject)) %>% group_by(activity_labels, subject, variable) %>% summarize(mean = mean(value))
+averageStd <- totalStd %>% gather(variable,value, -c(activity:subject)) %>% group_by(activity_labels, subject, variable) %>% summarize(mean = mean(value))
 
 averageAll <- rbind(averageMean,averageStd)                                                                                                                                              
 
